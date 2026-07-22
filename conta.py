@@ -33,3 +33,4 @@ print("Saldo:", conta.consultar_saldo())
 
 conta.sacar(1000)
 print("Saldo:", conta.consultar_saldo())
+print("Programa finalizado.")
