@@ -1,24 +1,24 @@
 class ContaBancaria:
     def __init__(self, titular, saldo):
         self.titular = titular
-        self.saldo = saldo
+        self.__saldo = saldo
 
     def depositar(self, valor):
         if valor > 0:
-            self.saldo += valor
+            self.__saldo += valor
             print(f"Depósito de R${valor:.2f} realizado.")
         else:
             print("Valor inválido.")
 
     def sacar(self, valor):
-        if valor <= self.saldo:
-            self.saldo -= valor
+        if valor <= self.__saldo:
+            self.__saldo -= valor
             print(f"Saque de R${valor:.2f} realizado.")
         else:
             print("Saldo insuficiente.")
 
     def consultar_saldo(self):
-        return self.saldo
+        return self.__saldo
 
 conta = ContaBancaria("Marcos", 100)
 
@@ -33,4 +33,3 @@ print("Saldo:", conta.consultar_saldo())
 
 conta.sacar(1000)
 print("Saldo:", conta.consultar_saldo())
-print("Programa finalizado.")
